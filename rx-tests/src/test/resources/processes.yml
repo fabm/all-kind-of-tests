@@ -1,0 +1,12 @@
+beans:
+  s1: esta vai ser uma string de teste
+  t2: |-
+    aqui vai estar a primeira linha do template
+    na segunda linha está 1ª variavel '${var1}' na terceira estará a 2ª
+    e aqui está ela:'${var2}', como esperada
+  i3: 2
+
+processes:
+  p01:
+    class: pt.fabm.processes.P0001
+    args: [s1, t2, i3]

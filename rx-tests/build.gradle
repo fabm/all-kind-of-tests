@@ -1,0 +1,47 @@
+plugins {
+    id "com.fizzed.rocker" version "1.1.0"
+    id 'java'
+}
+
+group 'pt.fabm.tests'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+sourceSets {
+    main {
+        rocker {
+            srcDir('src/main/java')
+        }
+    }
+}
+
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'com.fizzed', name: 'rocker-runtime', version: '1.1.0'
+    compile 'io.vertx:vertx-core:3.5.3'
+    compile 'io.vertx:vertx-web:3.5.4'
+    compile 'io.vertx:vertx-rx-java2:3.5.3'
+    compile 'com.github.javaparser:javaparser-core:3.6.20'
+    compile group: 'com.google.guava', name: 'guava', version: '26.0-jre'
+    compile group: 'org.yaml', name: 'snakeyaml', version: '1.21'
+    compile group: 'org.codehaus.groovy', name: 'groovy-templates', version: '2.4.12'
+    compile group: 'org.slf4j', name:'slf4j-api', version: '1.7.25'
+    compile group: 'ch.qos.logback', name:'logback-classic', version: '1.2.3'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile group: 'org.apache.commons', name: 'commons-lang3', version: '3.8.1'
+    testCompile group: 'commons-io', name: 'commons-io', version: '2.6'
+
+
+    // https://mvnrepository.com/artifact/org.cassandraunit/cassandra-unit
+// https://mvnrepository.com/artifact/com.datastax.cassandra/cassandra-driver-core
+    compile group: 'com.datastax.cassandra', name: 'cassandra-driver-core', version: '3.6.0'
+    compile 'io.vertx:vertx-web-client:3.5.4'
+    testCompile group: 'org.cassandraunit', name: 'cassandra-unit', version: '3.5.0.1'
+    testCompile 'io.vertx:vertx-web-client:3.5.4'
+
+}

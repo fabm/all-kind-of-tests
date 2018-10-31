@@ -1,0 +1,13 @@
+@*
+line of table
+*@
+@args (java.util.List<java.util.function.Function<String,String>> items)
+
+@views.HelloWorld.template("cool",RockerContent.NONE) -> {
+    @for (item : items) {
+        <tr>
+            <td>@item.apply("id")</td>
+            <td>@item.apply("value")</td>
+        </tr>
+    }
+}

@@ -1,0 +1,13 @@
+/**
+ * the method javadoc
+ * @return {@link String}
+ */
+public String getThePrivateVar() {
+    if(thePrivateVar == null){
+        return CONST_VAR;
+    }
+
+    //empty space after comment
+
+    return thePrivateVar+" "+CONST_VAR;
+}

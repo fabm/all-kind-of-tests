@@ -1,0 +1,24 @@
+plugins {
+    id 'groovy'
+    id 'java'
+    id "net.ltgt.apt" version "0.19"
+}
+
+group 'pt.fabm.annotation.process'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly("com.google.auto.factory:auto-factory:1.0-beta6")
+    annotationProcessor("com.google.auto.factory:auto-factory:1.0-beta6")
+    compileOnly project(':annotation-process-source')
+    annotationProcessor project(':annotation-process-source')
+
+    compile 'org.codehaus.groovy:groovy-all:2.3.11'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}

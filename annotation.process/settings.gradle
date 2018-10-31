@@ -1,0 +1,4 @@
+rootProject.name = 'annotation.process'
+include 'annotation-process-target'
+include 'annotation-process-source'
+
