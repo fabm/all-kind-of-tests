@@ -7,7 +7,8 @@ import java.lang.annotation.Target;
 
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.CLASS)
-public @interface Factory {
-    Class type();
-    String id();
+public @interface Entity {
+    String keyspace();
+    String table();
+    String script() default "";
 }

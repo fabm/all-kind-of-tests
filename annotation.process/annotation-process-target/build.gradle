@@ -12,7 +12,17 @@ repositories {
     mavenCentral()
 }
 
+//to let process to find the source in resources
+compileJava.options.sourcepath = files('src/main/resources')
+compileJava.options.compilerArgs += [
+        "-Ascript=${project.projectDir}/script/MappingFields.groovy",
+        "-AlogFile=${buildDir}/log.txt"
+]
+
+
 dependencies {
+    compile group: 'com.datastax.cassandra', name: 'cassandra-driver-core', version: '3.6.0'
+
     compileOnly("com.google.auto.factory:auto-factory:1.0-beta6")
     annotationProcessor("com.google.auto.factory:auto-factory:1.0-beta6")
     compileOnly project(':annotation-process-source')
